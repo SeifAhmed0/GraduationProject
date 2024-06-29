@@ -1,0 +1,130 @@
+<div class="container py-3  shadow">
+    <div class="row g-3 mb-5">
+        <div class="col-lg-3 img">
+        <img class="w-100 rounded-3 shadow" [src]="playerDetails.img" alt="">        </div>
+        <div class="col-lg-9 section-1">
+            <h2 class="playerName"> {{playerDetails.playerName}}</h2>
+            <div class="row   ">
+                <div class="col-lg-6">
+                    <ul>
+                        <li class="w-35 mb-2 d-flex justify-content-between"><span class="span">Gender :</span>  <span>{{playerDetails.playerGender}}</span></li>
+                        <li class="w-35 mb-2 d-flex justify-content-between"><span class="span">Club :</span>  <span class="d"> {{playerDetails.club}}</span></li>
+                        <li class="w-35 mb-2 d-flex justify-content-between"><span class="span">Height : </span>  <span>{{playerDetails.height}} m</span></li>
+                        <li class="w-35 mb-2 d-flex justify-content-between"><span class="span">Age : </span>  <span>{{playerAge}}</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4  justify-content-between ">
+        <div class="col-12 p-4 border part1 justify-content-around ">
+            <h3 class="text-center head1 m-3 p-3 pt-0">Local</h3>
+            <div class="row g-3  ">
+                <div class="col-sm-4  ">
+                    <div class="chart-box">
+                        <h2>Number of Local championships</h2>
+                        <div class="numbers">
+                            <p class="number">{{  localWin+localnotWin }}</p>
+                            <p class="  text-success number2 vis">100% </p>
+
+                        </div>
+        
+                    </div>
+                </div>
+                <div class="col-sm-4 ">
+                    <div class="chart-box">
+                        <h2>Number of championships won</h2>
+                        <div class="numbers">
+                            <p class="number">{{  localWin }}</p>
+                            <p class="text-success number2"> {{ ratioOflocalWin |decimalFormat}} % <i class="fa-solid fa-arrow-trend-up"></i></p>
+                        </div>
+        
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="chart-box">
+                        <h2>Number of championships lost</h2>
+                        <div class="numbers">
+                            <p class="number">{{localnotWin}}</p>
+                            <p class=" lost text-danger number2">{{ratioOfLocalnotwin |decimalFormat}} % <i class="fa-solid fa-arrow-trend-down"></i></p>
+                        </div>
+        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 p-4 pt-0 border part1 justify-content-around ">
+            <h3 class="text-center head1 m-3 p-3">International</h3>
+            <div class="row g-3  ">
+                <div class="col-sm-4 h-100 ">
+                    <div class="chart-box">
+                        <h2>Number of International championships</h2>
+                        <div class="numbers">
+                            <p class="number">{{  InternationalnotWin+InternationalWin }}</p>
+                            <p class="text-success number2 vis"> 100 % </p>
+                        </div>
+        
+                    </div>
+                </div>
+                <div class="col-sm-4 ">
+                    <div class="chart-box">
+                        <h2>Number of championships won</h2>
+                        <div class="numbers">
+                            <p class="number">{{  InternationalWin }}</p>
+                            <p class="text-success number2"> {{ ratioOfInternationalWin |decimalFormat}} % <i class="fa-solid fa-arrow-trend-up"></i></p>
+                        </div>
+        
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="chart-box">
+                        <h2>Number of championships lost</h2>
+                        <div class="numbers">
+                            <p class="number">{{InternationalnotWin}}</p>
+                            <p class=" lost text-danger number2">{{ratioOfInternationalnotWin |decimalFormat}} % <i class="fa-solid fa-arrow-trend-down"></i></p>
+                        </div>
+        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-4 ">
+            <div class="chart shadow border p-3">
+                <canvas id="pieChart" width="130" height="100" ></canvas>
+                <p class="text-success number2 m-3 "> {{ ratioOfGold |decimalFormat}} % <i class="fa-solid fa-arrow-trend-up"></i></p>
+
+              </div>
+        </div>
+        <div class="col-8  ">
+            <div class="chart  shadow border">
+                <canvas id="barChart" width="240" height="120" ></canvas>
+            </div>
+        </div>
+        <div class="col-4 ">
+            <div class="chart shadow border p-3">
+                <canvas id="pieChart-2" width="130" height="100" ></canvas>
+                <p class="text-success number2 m-3 "> {{ ratioOfBronze |decimalFormat}} % <i class="fa-solid fa-arrow-trend-up"></i></p>
+
+              </div>
+        </div>
+        <div class="col-8  ">
+            <div class="chart  shadow border">
+                <canvas id="lineChart" width="250" height="120" ></canvas>
+            </div>
+        </div>
+        <div class="col-4 ">
+            <div class="chart shadow border p-3">
+                <canvas id="pieChart-3" width="130" height="100" ></canvas>
+                <p class="text-success number2 m-3 "> {{ ratioOfSliver |decimalFormat}} % <i class="fa-solid fa-arrow-trend-up"></i></p>
+
+              </div>
+        </div>
+        
+    </div>
+
+    
+    </div>

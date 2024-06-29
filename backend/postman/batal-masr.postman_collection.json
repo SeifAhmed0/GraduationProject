@@ -1,0 +1,2713 @@
+{
+	"info": {
+		"_postman_id": "3b0179b7-010b-4ba8-a8df-8ee89a63243c",
+		"name": "batal-masr",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27127709"
+	},
+	"item": [
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "mangeAgentsOfMinistry",
+					"item": [
+						{
+							"name": "add agent",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "admin",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "ffffggf@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{localhost}}/admin/agent/",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"admin",
+										"agent",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all agent",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{localhost}}/admin/agent",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"admin",
+										"agent"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get single agent",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{localhost}}/admin/agent/{{test-agent-ID}}",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"admin",
+										"agent",
+										"{{test-agent-ID}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "edit agent",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "ahmed ezz",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "fffgg@gmail.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{localhost}}/admin/agent/{{test-agent-ID}}",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"admin",
+										"agent",
+										"{{test-agent-ID}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete agent",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{localhost}}/admin/agent/{{test-agent-ID}}",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"admin",
+										"agent",
+										"{{test-agent-ID}}"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "mangeRepresentorOfAssociationServices",
+					"item": [
+						{
+							"name": "add agent",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "admin",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "representor@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "text"
+										},
+										{
+											"key": "association",
+											"value": "kora",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{localhost}}/admin/representor/",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"admin",
+										"representor",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all agent",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{localhost}}/admin/representor",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"admin",
+										"representor"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get single agent",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{localhost}}/admin/representor/{{test-representor-ID}}",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"admin",
+										"representor",
+										"{{test-representor-ID}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all associationMember",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{localhost}}/admin/representor/associationMember/kora",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"admin",
+										"representor",
+										"associationMember",
+										"kora"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "edit agent",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "admin",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "admin@gmail.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{localhost}}/admin/representor/{{test-representor-ID}}",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"admin",
+										"representor",
+										"{{test-representor-ID}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete agent",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{localhost}}/admin/representor/{{test-representor-ID}}",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"admin",
+										"representor",
+										"{{test-representor-ID}}"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "mangeAssociation",
+					"item": [
+						{
+							"name": "add Association",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "associationName",
+											"value": "handball",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{localhost}}/admin/association",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"admin",
+										"association"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all Association",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{localhost}}/admin/association",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"admin",
+										"association"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get single Association",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{localhost}}/admin/association/{{test-Association-ID}}",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"admin",
+										"association",
+										"{{test-Association-ID}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "edit Association",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "associationName",
+											"value": "kongFu",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{localhost}}/admin/association/{{test-Association-ID}}",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"admin",
+										"association",
+										"{{test-Association-ID}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete Association",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{localhost}}/admin/association/{{test-Association-ID}}",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"admin",
+										"association",
+										"{{test-Association-ID}}"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "representor",
+			"item": [
+				{
+					"name": "mangePlayer",
+					"item": [
+						{
+							"name": "add player",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-representor}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "ahmed",
+											"type": "text"
+										},
+										{
+											"key": "birthOfDate",
+											"value": "1975-02-16",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "male",
+											"type": "text"
+										},
+										{
+											"key": "height",
+											"value": "167",
+											"type": "text"
+										},
+										{
+											"key": "weight",
+											"value": "50",
+											"type": "text"
+										},
+										{
+											"key": "club",
+											"value": "sdasdas",
+											"type": "text"
+										},
+										{
+											"key": "img",
+											"type": "file",
+											"src": "/C:/Users/20120/OneDrive/Pictures/Screenshots/2024-06-02.png"
+										},
+										{
+											"key": "email",
+											"value": "eaa@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{localhost}}/representor/player",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"representor",
+										"player"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all player in association",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-representor}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{localhost}}/representor/player",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"representor",
+										"player"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get Player Details",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-representor}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{localhost}}/representor/player/Details/{{test-Player-ID}}",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"representor",
+										"player",
+										"Details",
+										"{{test-Player-ID}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "help",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-representor}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{localhost}}/representor/player/help",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"representor",
+										"player",
+										"help"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get single player in association",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-representor}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{localhost}}/representor/player/{{test-Player-ID}}",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"representor",
+										"player",
+										"{{test-Player-ID}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "edit Player",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-representor}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "ahmed",
+											"type": "text"
+										},
+										{
+											"key": "birthOfDate",
+											"value": "1995-02-16",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "male",
+											"type": "text"
+										},
+										{
+											"key": "height",
+											"value": "167",
+											"type": "text"
+										},
+										{
+											"key": "weight",
+											"value": "52",
+											"type": "text"
+										},
+										{
+											"key": "club",
+											"value": "sdasdas",
+											"type": "text"
+										},
+										{
+											"key": "img",
+											"type": "file",
+											"src": "/C:/Users/20120/OneDrive - Faculty of Computers and Information/Desktop/WhatsApp Image 2024-02-23 at 04.22.23_c561b990.jpg",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{localhost}}/representor/player/{{test-Player-ID}}",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"representor",
+										"player",
+										"{{test-Player-ID}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete agent Copy",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-representor}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{localhost}}/representor/player/{{test-Player-ID}}",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"representor",
+										"player",
+										"{{test-Player-ID}}"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "mange Championship",
+					"item": [
+						{
+							"name": "add championship",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-representor}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "masr2",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "male",
+											"type": "text"
+										},
+										{
+											"key": "weight",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "typeOfChampionship",
+											"value": "Local",
+											"type": "text"
+										},
+										{
+											"key": "isYoungs",
+											"value": "true",
+											"type": "text"
+										},
+										{
+											"key": "age",
+											"value": "15",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{localhost}}/representor/championship",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"representor",
+										"championship"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all championshipin association",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-representor}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{localhost}}/representor/championship",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"representor",
+										"championship"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get single championshipin association",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-representor}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{localhost}}/representor/championship/{{test-championship-ID}}",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"representor",
+										"championship",
+										"{{test-championship-ID}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "edit championship",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-representor}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "masr2",
+											"type": "text"
+										},
+										{
+											"key": "weight",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "typeOfChampionship",
+											"value": "Local",
+											"type": "text"
+										},
+										{
+											"key": "isYoungs",
+											"value": "false",
+											"type": "text"
+										},
+										{
+											"key": "age",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{localhost}}/representor/championship/{{test-championship-ID}}",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"representor",
+										"championship",
+										"{{test-championship-ID}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete championship",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-representor}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{localhost}}/representor/championship/{{test-championship-ID}}",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"representor",
+										"championship",
+										"{{test-championship-ID}}"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "mange Medal",
+					"item": [
+						{
+							"name": "add medal",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-representor}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "MedalAchievementDate",
+											"value": "1960-02-14",
+											"type": "text"
+										},
+										{
+											"key": "typeOfMedal",
+											"value": "gold",
+											"type": "text"
+										},
+										{
+											"key": "playerId",
+											"value": "N9B6nQAMyn",
+											"type": "text"
+										},
+										{
+											"key": "championshipID",
+											"value": "18",
+											"type": "text"
+										},
+										{
+											"key": "year",
+											"value": "2000",
+											"type": "text"
+										},
+										{
+											"key": "isWin",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{localhost}}/representor/medal",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"representor",
+										"medal"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all medal in association",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-representor}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{localhost}}/representor/medal",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"representor",
+										"medal"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get single medal",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-representor}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{localhost}}/representor/medal/{{test-medal-ID}}",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"representor",
+										"medal",
+										"{{test-medal-ID}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "edit medal",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-representor}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "MedalAchievementDate",
+											"value": "1960-02-14",
+											"type": "text"
+										},
+										{
+											"key": "typeOfMedal",
+											"value": "bronze",
+											"type": "text"
+										},
+										{
+											"key": "year",
+											"value": "1996",
+											"type": "text"
+										},
+										{
+											"key": "isWin",
+											"value": "true",
+											"type": "text"
+										},
+										{
+											"key": "championshipID",
+											"value": "10",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{localhost}}/representor/medal/{{test-medal-ID}}",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"representor",
+										"medal",
+										"{{test-medal-ID}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete medal",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-representor}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{localhost}}/representor/medal/{{test-medal-ID}}",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"representor",
+										"medal",
+										"{{test-medal-ID}}"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "mange player issues",
+					"item": [
+						{
+							"name": "shared issues",
+							"item": [
+								{
+									"name": "get all issues",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token-representor}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{localhost}}/representor/playerSharedIssues",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"representor",
+												"playerSharedIssues"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "add issues",
+							"item": [
+								{
+									"name": "get single issue",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token-representor}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{localhost}}/representor/playerAddIssues/12",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"representor",
+												"playerAddIssues",
+												"12"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "accept medal request",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token-representor}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{localhost}}/representor/playerAddIssues/accept/16",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"representor",
+												"playerAddIssues",
+												"accept",
+												"16"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "reject medal request",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token-representor}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{localhost}}/representor/playerAddIssues/5",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"representor",
+												"playerAddIssues",
+												"5"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "edit issues",
+							"item": [
+								{
+									"name": "get single issue",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token-representor}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{localhost}}/representor/playerEditIssues/21",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"representor",
+												"playerEditIssues",
+												"21"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "accept medal request",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token-representor}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{localhost}}/representor/playerEditIssues/accept/3",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"representor",
+												"playerEditIssues",
+												"accept",
+												"3"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "reject medal request",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token-representor}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{localhost}}/representor/playerEditIssues/5",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"representor",
+												"playerEditIssues",
+												"5"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "player info issues",
+							"item": [
+								{
+									"name": "get single issue",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token-representor}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{localhost}}/representor/PlayerInfoIssues/6",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"representor",
+												"PlayerInfoIssues",
+												"6"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "accept medal request",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token-representor}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{localhost}}/representor/PlayerInfoIssues/accept/14",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"representor",
+												"PlayerInfoIssues",
+												"accept",
+												"14"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "reject medal request",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token-representor}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{localhost}}/representor/PlayerInfoIssues/1",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"representor",
+												"PlayerInfoIssues",
+												"1"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "agent",
+			"item": [
+				{
+					"name": "Display Player Info",
+					"item": [
+						{
+							"name": "get Player Details",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-agent}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{localhost}}/agent/playerInfo/getAllPlayerDetails/{{test-Player-ID}}/{{test-Association-ID}}",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"agent",
+										"playerInfo",
+										"getAllPlayerDetails",
+										"{{test-Player-ID}}",
+										"{{test-Association-ID}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all player in association",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-agent}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{localhost}}/agent/playerInfo/getAllPlayersInSingleAssociation/{{test-Association-ID}}",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"agent",
+										"playerInfo",
+										"getAllPlayersInSingleAssociation",
+										"{{test-Association-ID}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all player in system",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-agent}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{localhost}}/agent/playerInfo/getAllPlayersInSingleInAllProject",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"agent",
+										"playerInfo",
+										"getAllPlayersInSingleInAllProject"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Use model",
+					"item": [
+						{
+							"name": "gen model",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-agent}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "// {\r\n//                 \"features\": [\r\n//                     {\r\n//                         \"id\": \"feature_1\",\r\n//                         \"values\": [1, 4]\r\n//                     },\r\n//                     {\r\n//                         \"id\": \"feature_2\",\r\n//                         \"values\": [5, 10]\r\n//                     },\r\n//                     {\r\n//                         \"id\": \"feature_3\",\r\n//                         \"values\": [9, 15]\r\n//                     }\r\n//                 ]\r\n// }\r\n\r\n{\r\n    \"associationId\":11,\r\n    \"playersIDs\":[\r\n        \"0hioExKwF4\",\"0mY9p3zg__\",\"4a8KiJ6K7I\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/agent/useModal",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"agent",
+										"useModal"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all player in association",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-agent}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{localhost}}/agent/playerInfo/getAllPlayersInSingleAssociation/{{test-Association-ID}}",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"agent",
+										"playerInfo",
+										"getAllPlayersInSingleAssociation",
+										"{{test-Association-ID}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all player in system",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-agent}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{localhost}}/agent/playerInfo/getAllPlayersInSingleInAllProject",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"agent",
+										"playerInfo",
+										"getAllPlayersInSingleInAllProject"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Display Association Info",
+					"item": [
+						{
+							"name": "get all Association",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-agent}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{localhost}}/agent/associationInfo/getAllAssociation",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"agent",
+										"associationInfo",
+										"getAllAssociation"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all Medal In Association",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-agent}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{localhost}}/agent/associationInfo/getallMedalInAssociation/{{test-Association-ID}}",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"agent",
+										"associationInfo",
+										"getallMedalInAssociation",
+										"{{test-Association-ID}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "player",
+			"item": [
+				{
+					"name": "get single player data",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-player}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{localhost}}/player/getSinglePlayer",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"player",
+								"getSinglePlayer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all champion",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-player}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{localhost}}/player/getAllChampion",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"player",
+								"getAllChampion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Player Details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-player}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{localhost}}/player/getPlayerDetails",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"player",
+								"getPlayerDetails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single madel",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-player}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{localhost}}/player/getSingelMadel/{{test-madel-player-das}}",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"player",
+								"getSingelMadel",
+								"{{test-madel-player-das}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "request To Add Madel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-player}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "MedalAchievementDate",
+									"value": "2019-9-15",
+									"type": "text"
+								},
+								{
+									"key": "typeOfMedal",
+									"value": "gold",
+									"type": "text"
+								},
+								{
+									"key": "championshipID",
+									"value": "1209",
+									"type": "text"
+								},
+								{
+									"key": "year",
+									"value": "2024",
+									"type": "text"
+								},
+								{
+									"key": "isWin",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "sdasdsadsa",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/player/requestToAddMadel",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"player",
+								"requestToAddMadel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "request Edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-player}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "MedalAchievementDate",
+									"value": "2019-9-15",
+									"type": "text"
+								},
+								{
+									"key": "typeOfMedal",
+									"value": "bronzq",
+									"type": "text"
+								},
+								{
+									"key": "championshipID",
+									"value": "1083",
+									"type": "text"
+								},
+								{
+									"key": "year",
+									"value": "2015",
+									"type": "text"
+								},
+								{
+									"key": "isWin",
+									"value": "yes",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "sdasdsadsa",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/player/reqEdit/{{test-madel-player-das}}",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"player",
+								"reqEdit",
+								"{{test-madel-player-das}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "request Player Info",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-player}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "playerName",
+									"value": "ahmed",
+									"type": "text"
+								},
+								{
+									"key": "birthOfDate",
+									"value": "2002/8/8",
+									"type": "text"
+								},
+								{
+									"key": "height",
+									"value": "180",
+									"type": "text"
+								},
+								{
+									"key": "weight",
+									"value": "60",
+									"type": "text"
+								},
+								{
+									"key": "club",
+									"value": "sdsada",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "fddfsdfsdfsdfsddfsd",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/player/requestPlayerInfo",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"player",
+								"requestPlayerInfo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "Saleh-peJicbOlA@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{localhost}}/login",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "single logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token-admin}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{localhost}}/singleLogout",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"singleLogout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout For All",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token-admin}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{localhost}}/allLogout",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"allLogout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ml",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"features\": [\r\n        {\r\n            \"id\": \"feature_1\",\r\n            \"values\": [1, 4]\r\n        },\r\n        {\r\n            \"id\": \"feature_2\",\r\n            \"values\": [5, 10]\r\n        },\r\n        {\r\n            \"id\": \"feature_3\",\r\n            \"values\": [9, 15]\r\n        }\r\n    ]\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhostModel}}/predict",
+					"host": [
+						"{{localhostModel}}"
+					],
+					"path": [
+						"predict"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "localhost",
+			"value": "http://localhost:3000",
+			"type": "string"
+		},
+		{
+			"key": "localhostModel",
+			"value": "http://localhost:4000",
+			"type": "string"
+		},
+		{
+			"key": "token-admin",
+			"value": "eyJhbGciOiJIUzI1NiJ9.UW9fWUxJV3NiMA.DCbnvWnzf8tDnVn4BXiG-7PZlKutKXFs7L4ge6rXrvA",
+			"type": "string"
+		},
+		{
+			"key": "token-representor",
+			"value": "eyJhbGciOiJIUzI1NiJ9.TjBjeGh4UE13OA.jyG6fRSMNxR-FGMJp0tLmZIs6ku8DjPL3k-Mz0m2qYs",
+			"type": "string"
+		},
+		{
+			"key": "token-player",
+			"value": "eyJhbGciOiJIUzI1NiJ9.SGN4WGJvNUUzRA.dqqMQaf1uxAcdzKEQdKSLXsUXQE2Jms7hrEer8WopLg",
+			"type": "string"
+		},
+		{
+			"key": "test-agent-ID",
+			"value": "esVUQOxZ3k",
+			"type": "string"
+		},
+		{
+			"key": "test-representor-ID",
+			"value": "6jOFFMXmdu",
+			"type": "string"
+		},
+		{
+			"key": "test-Association-ID",
+			"value": "11",
+			"type": "string"
+		},
+		{
+			"key": "test-Player-ID",
+			"value": "-peJicbOlA",
+			"type": "string"
+		},
+		{
+			"key": "test-championship-ID",
+			"value": "10",
+			"type": "string"
+		},
+		{
+			"key": "test-medal-ID",
+			"value": "1po58b_pK6",
+			"type": "string"
+		},
+		{
+			"key": "token-agent",
+			"value": "eyJhbGciOiJIUzI1NiJ9.V3ktM0ZvWk9faw.fZcPGp-ygiRALsUnHl09KRJbvik4I-UN_8juK4fus5M",
+			"type": "string"
+		},
+		{
+			"key": "test-madel-player-das",
+			"value": "D6ENfZnQ8h",
+			"type": "string"
+		}
+	]
+}

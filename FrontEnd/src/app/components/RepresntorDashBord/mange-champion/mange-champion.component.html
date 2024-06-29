@@ -1,0 +1,49 @@
+<div class="container-fluid user-list-page bg-body-tertiary mt-2" #top>
+    <h1 class="text-center text-dark  p-4">Championship List</h1>
+    <input type="text" placeholder="Search..." class="form-control w-75 m-auto  mb-5" [(ngModel)]="term">
+
+    <div class="row g-5">
+        <div class="col-md-3">
+            <div class="add-user-card  bg-transparent ">
+                <div class="icon mb-5 mt-5"><i class="fa-solid fa-user-plus text-dark"></i></div>
+                <button class="btn btn-dark" routerLink="/addChampion">ADD champion</button>
+            </div>
+        </div>
+        <div class="col-md-3 " *ngFor="let champion of allChampionships|search:term| paginate: { id: 'foo', itemsPerPage: 11, currentPage: p, totalItems: total }">
+            <div class="user-card shadow">
+                <div class="icon w-100 m-auto">
+                    <img src="../../../../assets/assoc.png" alt="User Profile Picture">
+                </div>
+                <div class="data">
+                    <h2>{{champion.name}}</h2>
+                    <br>
+                    <div class="data2">
+                        <!-- <p><span class="fw-bold"> Name: </span>{{champion.name}} </p> -->
+                        <p><span class="fw-bold"> Association: </span>{{champion.associationName}} </p>
+                        <p><span class="fw-bold"> Type of championship: </span>{{champion.typeOfChampionship}} </p>
+                        <p  *ngIf="champion.weight"><span class="fw-bold"> Weight: </span>{{champion.weight}} </p>
+                        <p *ngIf="champion.isYoungs"><span class="fw-bold"> Under age: </span>{{champion.age}} </p>
+                        <br>
+                    </div>
+                    <div class="buttons d-flex flex-column">
+                        <button class="btn btn-secondary mb-3" [routerLink]="['/editChampion',champion.id]">EDIT
+                            CHAMPIONSHIP</button>
+                        <button class="btn btn-danger" (click)="deletechampion(champion.id)">DELETE CHAMPIONSHIP</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <pagination-controls class="pagination-controls text-center" id="foo"
+    (pageChange)="pageChanged($event)"
+    (pageBoundsCorrection)="pageChanged($event)"
+    [maxSize]="9"
+    [directionLinks]="true"
+    [autoHide]="true"
+    [responsive]="true"
+    previousLabel="Previous"
+    nextLabel="Next">
+  </pagination-controls>
+</div>

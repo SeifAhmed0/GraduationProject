@@ -1,0 +1,36 @@
+<section class="container" #top>
+    <h2 class="mt-5 text-center">Mange All Issues</h2>
+    <div class="row mt-3 mb-3 g-5">
+        <div class="col-sm-3 text-center  mb-3 mb-sm-0" *ngFor="let item of playerInfoIssues">
+            <div class="card" >
+              <img src="../../../../assets/issues.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h4 class="card-title">{{item.playerName}}</h4>
+                <h6 class="card-title">{{item.typeOfRequest}}</h6>
+                <button class="btn btn-outline-dark button" [routerLink]="['/informationRequest',item.requestID]">Mange</button>
+              </div>
+            </div>
+          </div>
+        <div class="col-sm-3 text-center  mb-3 mb-sm-0" *ngFor="let item2 of requestMedal">
+
+          <div class="card" >
+            <img src="../../../../assets/issues.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h4 class="card-title">{{item2.name}}</h4>
+              <h6 class="card-title">{{item2.typeOfRequest}} Medal</h6>
+              <a href="#" class="btn btn-outline-dark button" *ngIf="item2.typeOfRequest=='add'" [routerLink]="['/addMedalReq',item2.requestID]">Mange</a>
+              <a href="#" class="btn btn-outline-dark button" *ngIf="item2.typeOfRequest=='edit'" [routerLink]="['/EditMedalReq',item2.requestID]">Mange</a>            </div>
+          </div>
+          </div>
+    </div>
+    <!-- <pagination-controls class="pagination-controls text-center" id="foo" -->
+    <!-- (pageChange)="pageChanged($event)" -->
+    <!-- (pageBoundsCorrection)="pageChanged($event)" -->
+    <!-- [maxSize]="9" -->
+    <!-- [directionLinks]="true" -->
+    <!-- [autoHide]="true" -->
+    <!-- [responsive]="true" -->
+    <!-- previousLabel="Previous" -->
+    <!-- nextLabel="Next"> -->
+  <!-- </pagination-controls> -->
+</section>

@@ -1,0 +1,63 @@
+<section>
+    <div class="container p-5">
+        <div class="form-container shadow ">
+            <h1 class="text-center mb-5">Edit Medal</h1>
+            <form [formGroup]="editMedal" (ngSubmit)="handelForm()">
+                <div class="form-group">
+                    <label for="MedalAchievementDate" class="form-label">data of championship *</label>
+                    <input [(ngModel)]="model.MedalAchievementDate" type="date" class="form-control" formControlName="MedalAchievementDate" id="MedalAchievementDate">
+                    <div class="alert alert-danger mt-1" *ngIf="editMedal.get('MedalAchievementDate')?.errors && (editMedal.get('MedalAchievementDate')?.touched ||editMedal.get('MedalAchievementDate')?.value.length>0) ">
+                        <p class="m-0 " *ngIf="editMedal.get('MedalAchievementDate')?.getError('required')">birthOfDate is required</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="championshipID" class="form-label">championship  *</label>
+                    <select [(ngModel)]="model.championshipID" (change)="onChampionshipChange()" class="form-control" formControlName="championshipID" id="championshipID" name="championshipID" >
+                        <option value="" disabled selected >Select championship</option>
+                        <option [value]="item.id" *ngFor="let item of nameArray">
+                            <ng-container *ngIf="!item.age; else elseBlock">
+                                {{"ID : "+item.id +"Name : "+item.name +" Type of championship: "+item.typeOfChampionship + " Gender: "+ item.gender }}
+                              </ng-container>
+                              <ng-template #elseBlock>
+                                {{"ID : "+item.id +"Name : "+item.name +" Type of championship: "+item.typeOfChampionship + " Gender: "+ item.gender +" Under the age of "+item.age}}
+                              </ng-template>
+                            </option>                    
+                    </select>
+                    
+                    <div class="alert alert-danger mt-1" *ngIf="editMedal.get('championshipID')?.errors && (editMedal.get('championshipID')?.touched ||editMedal.get('championshipID')?.value.length>0) ">
+                        <p class="m-0 " *ngIf="editMedal.get('championshipID')?.getError('required')">championship is required</p>
+                    </div>
+                </div>
+                <div class="form-group" >
+                    <label for="year" class="form-label">year *</label>
+                    <input [(ngModel)]="model.year" type="number" min="1900" max="2100" class="form-control" formControlName="year" id="year">
+                    <div class="alert alert-danger mt-1" *ngIf="editMedal.get('year')?.errors && (editMedal.get('year')?.touched ||editMedal.get('year')?.value.length>0) ">
+                        <p class="m-0 " *ngIf="editMedal.get('year')?.getError('required')">height is required</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="isWin" class="form-label">Is Win *</label>
+                    <input [(ngModel)]="model.isWin" type="checkbox"  formControlName="isWin" id="isWin">
+                </div>
+                <div class="form-group" *ngIf="editMedal.get('isWin')?.value">
+                    <label for="typeOfMedal" class="form-label">type Of Medal *</label>
+                    <select [(ngModel)]="model.typeOfMedal" class="form-control" formControlName="typeOfMedal" id="typeOfMedal" name="typeOfMedal" >
+                        <option value="" disabled selected >Select type of medal</option>
+                        <option value="gold">gold</option>
+                        <option value="Silver">Silver</option>
+                        <option value="bronze">bronze</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                    
+                    <div class="alert alert-danger mt-1" *ngIf="editMedal.get('typeOfMedal')?.errors && (editMedal.get('typeOfMedal')?.touched ||editMedal.get('typeOfMedal')?.value.length>0) ">
+                        <p class="m-0 " *ngIf="editMedal.get('typeOfMedal')?.getError('required')">type of championship is required</p>
+                    </div>
+                </div>
+                <div class="button w-100  ">
+                    <button type="submit" class="btn btn-dark" [disabled]="editMedal.invalid">edit Madel <i *ngIf="isLoading" class="fa-solid fa-spinner fa-spin"></i></button>
+                    <p class="alert alert-danger p-1 ms-0 mt-2 w-50" *ngIf="errMessage">{{errMessage}}</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

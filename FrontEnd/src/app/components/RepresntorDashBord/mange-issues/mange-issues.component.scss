@@ -1,0 +1,39 @@
+.button{
+    padding-inline:25px ;
+}
+.name{
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.777);
+}
+@keyframes fadeInFromBottom {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+.card{
+    animation: fadeInFromBottom 0.8s ease-out;
+
+}
+::ng-deep .ngx-pagination {
+    margin-top: 30px;
+  }
+  
+  ::ng-deep .ngx-pagination .current {
+    padding: .1875rem .625rem !important;
+    background: #000 !important;
+    color: #fefefe !important;
+    cursor: default !important;
+    border-radius: 30px !important;
+  }
+  
+  ::ng-deep .ngx-pagination a:hover {
+    border-radius: 30px !important;
+  }  
+  .card{
+   min-height: 430px;
+  }

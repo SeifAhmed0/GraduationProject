@@ -1,0 +1,143 @@
+.leftBtn {
+    padding: 10px;
+    margin: 10px;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+ul li {
+    list-style-type: none;
+
+}
+.award {
+    // background-color: rgba(7, 94, 175, 0.1);
+    color: #000;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.award h5 {
+    margin-bottom: 5px;
+}
+
+.award p {
+    margin: 0;
+}
+.section-1{
+    padding: 30px;
+}
+.img {
+    width: 15%;
+}
+.span{
+    font-weight: bold;
+}
+.content{
+
+    padding: 10px;
+   /*  position: relative; */
+    max-height: 40vh; 
+}
+.container{
+    padding: 20px;
+    margin-top: 20px;
+}
+.w-35{
+    width: 36%;
+}
+.playerName{
+    font-size: 42px;
+}
+ul{
+    margin: 0!important;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #f5f5f5;
+  }
+  
+  .nav-link {
+    color: black;
+  }
+  
+  .nav-link:hover {
+    color: #000
+  }  
+
+
+  .active{
+    color: #00cccc!important;
+  }  
+  .chart{
+    height: 460px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .border{
+    border-radius: 50px;
+  }
+  .span2{
+    width: 200px;
+  }
+
+
+
+
+.chart-box {
+    border: 1px solid #ddd;
+   
+    border-radius: 5px;
+}
+
+.chart-box h2 {
+    margin-bottom: 10px;
+    font-size: 15px;
+    margin-left: 8px;
+    margin-top: 5px;
+}
+
+.chart-box .number {
+    font-weight: bold;
+    font-size: 40px;
+
+    margin-bottom: 0;
+}
+.number2{
+    background-color: rgba(0, 128, 0, 0.207);
+    border-radius: 10px;
+    padding-inline: 7px;
+    width: fit-content;
+    text-align: center;
+}
+.numbers{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.lost{
+    background-color: rgba(255, 0, 0, 0.219);
+}
+.part1{
+    border-radius: 5px;
+}
+.head1{
+    font-size: 30px;
+}
+
+.vis{
+    visibility: hidden;
+}

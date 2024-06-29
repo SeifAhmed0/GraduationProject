@@ -1,0 +1,210 @@
+* {
+  text-decoration: none;
+}
+
+.profile-card {
+  background-color: #1b1b1b21;
+  border-radius: 15px;
+  padding: 20px;
+  margin: auto;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  min-height: 500px;
+  animation: fadeInFromBottom 0.8s ease-out;
+}
+
+
+
+.profile-card .profile-img {
+  background-color: #fff;
+  border-radius: 50% !important;
+  padding: 5px;
+  margin-bottom: 20px;
+  width: 220px; /* Adjust the size as needed */
+  height: 220px; /* Ensure it matches the width */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+.profile-card h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+// .profile-card:hover {
+//   transform: translateY(-10px);
+//   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+// }
+
+
+.level-badge {
+  background-color: #c0392b;
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.points {
+  color: #e74c3c;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.part1 p span {
+  font-weight: 700;
+  font-size: 17px;
+  margin: 0 !important;
+}
+
+.part1 p small {
+  font-size: 15px;
+}
+
+.add-user-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #0e0d0d;
+  border-radius: 10px;
+  animation: bounceIn 0.8s ease-out;
+  min-height: 500px;
+}
+
+.add-user-card button {
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.icon i {
+  font-size: 70px;
+}
+
+.user-card {
+  border-radius: 10px;
+  padding: 20px;
+  color: #0e0d0d;
+  margin-bottom: 20px;
+  animation: fadeInFromBottom 0.8s ease-out;
+  img {
+    width: 100%;
+  }
+}
+
+.add-user-card {
+  cursor: pointer;
+}
+
+.profile-card img {
+  width: 150px; /* Ensure it matches the CSS width and height */
+  height: 150px;
+}
+
+.img {
+  display: contents;
+}
+
+::ng-deep .ngx-pagination {
+  margin-top: 30px;
+}
+
+::ng-deep .ngx-pagination .current {
+  padding: .1875rem .625rem !important;
+  background: #000 !important;
+  color: #fefefe !important;
+  cursor: default !important;
+  border-radius: 30px !important;
+}
+
+::ng-deep .ngx-pagination a:hover {
+  border-radius: 30px !important;
+}
+
+input:focus {
+  border: 1px solid #0a0b0c57;
+  box-shadow: 0px 0px 0px 4px #444a5364;
+  border-radius: 5px;
+}
+
+@keyframes fadeInFromBottom {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+  
+  .notfound-container {
+    height: 80vh;
+    background-color: #f8f9fa;
+  }
+  
+  .notfound-content {
+    max-width: 400px;
+    background: white;
+    border-radius: 8px;
+  }
+  
+  .notfound-icon {
+    font-size: 48px;
+    color: #dc3545;
+    margin-bottom: 16px;
+  }
+  
+  .notfound-title {
+    font-size: 24px;
+    color: #343a40;
+  }
+  
+  .notfound-message {
+    font-size: 16px;
+    color: #6c757d;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+
+  .profile-card{
+    overflow: hidden;
+  }
+  .custom-checkbox{
+    position: absolute;
+    bottom: 33px;
+    right: 38px;
+    animation: fadeInFromBottom 0.8s ease-out;
+    transition: 1s;
+  }
+  .custom-checkbox i{
+    font-size: 25px;
+  }
+  .custom-checkbox2{
+    position: absolute;
+    bottom: 33px;
+    right: 36px;
+    animation: fadeInFromBottom 0.8s ease-out;
+    transition: 1s;
+  }
+  .custom-checkbox2 i{
+    font-size: 25px;
+  }
+

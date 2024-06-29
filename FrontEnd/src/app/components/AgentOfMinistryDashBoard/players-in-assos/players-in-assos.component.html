@@ -1,0 +1,63 @@
+<section *ngIf="notFound==''" class="mb-3" #top>
+	<div class="container-fluid mt-5" >
+	  <h1 class="text-center text-dark">All Players</h1>  
+	  <input type="text" placeholder="Search..." class="form-control w-75 m-auto mb-5" [(ngModel)]="term">
+	  <div class="d-flex justify-content-between p-2 mt-4">
+		<button type="submit" class="btn btn-dark main-btn" (click)="clear()">Clear Checkboks</button>
+		<button type="submit" class="btn btn-dark main-btn " (click)="predict()">PREDICTING THE BEST PLAYER 
+			<i *ngIf="isLoading" class="fa-solid fa-spinner fa-spin"></i>
+		  </button>
+	  </div>
+	  <div class="row g-4">
+		<div class="col-3 position-relative all" *ngFor="let player of allPlayers | search:term | paginate: { id: 'foo', itemsPerPage: 12, currentPage: p, totalItems: total }">
+		  <div class="profile-card text-center position-relative" [routerLink]="['/playerDetails', player.id, player.associationID]">
+			<div class="img w-50 m-auto">
+			  <img [src]="player.img" alt="Profile Avatar" class="profile-img img-fluid rounded-circle">
+			</div>
+			<h2 class="fs-2">{{player.name}}</h2>
+			<div class="section">
+			  <div class="player-data d-flex flex-column-reverse justify-content-between mb-4">
+				<div class="part1">
+				  <p>
+					<span>Association Name: </span>
+					<small>{{player.associationName}}</small>
+				  </p>
+				  <p>
+					<span>Club: </span>
+					<small>{{player.club}}</small>
+				  </p>
+				</div>
+			  </div>
+			  <div class="check"></div>
+			</div>
+		  </div>
+		  <div *ngIf="!modelObject.playersIDs.includes($any(player.id))" class="custom-checkbox" (click)="addToArray(player.id)">
+			<i class="fa-regular fa-square-check"></i>
+		  </div>
+		  <div *ngIf="modelObject.playersIDs.includes($any(player.id))" class="custom-checkbox2" (click)="removeFromArray(player.id)">
+			<i class="fa-solid fa-square-check"></i>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<pagination-controls class="pagination-controls text-center" id="foo"
+	  (pageChange)="pageChanged($event)"
+	  (pageBoundsCorrection)="pageChanged($event)"
+	  [maxSize]="9"
+	  [directionLinks]="true"
+	  [autoHide]="true"
+	  [responsive]="true"
+	  previousLabel="Previous"
+	  nextLabel="Next">
+	</pagination-controls>
+  </section>
+  
+
+
+<section class="notfound-container d-flex justify-content-center align-items-center" *ngIf="notFound!=''">
+	<div class="notfound-content shadow p-4 text-center">
+	  <i class="fas fa-exclamation-circle notfound-icon"></i>
+	  <h2 class="notfound-title"> Not Found Players in this Association </h2>
+	  <!-- <p class="notfound-message">We couldn't find the player you were looking for. Please check the name and try again.</p> -->
+	</div>
+  </section>

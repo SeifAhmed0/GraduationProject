@@ -1,0 +1,19 @@
+<div class="container-fluid user-list-page bg-body-tertiary mt-2">
+    <h1 class="text-center text-dark  p-4">Assosiation List</h1>
+    <div class="row g-5">
+        <div class="col-md-3 " *ngFor="let agent of allAgents" [routerLink]="['/playersInAssos',agent.associationID]">
+            <div class="user-card shadow">
+                <div class="icon w-100 m-auto">
+                <img src="../../../assets/assoc.png" alt="User Profile Picture">
+                </div>
+                <div class="data">
+                    
+                    <br>
+            <p class=" text"><span class="fw-bold ">Association Name: </span>{{agent.associationName}} </p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

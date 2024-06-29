@@ -1,0 +1,46 @@
+<div class="container-fluid user-list-page bg-body-tertiary mt-2" #top *ngIf="notFound==''">
+    <h1 class="text-center text-dark  p-4"> Members In Assosiation</h1>
+    <input type="text" placeholder="Search..." class="form-control w-75 m-auto  mb-5" [(ngModel)]="term">
+
+    <div class="row g-5">
+
+        <div class="col-md-3 " *ngFor="let agent of Allmembers|search:term| paginate: { id: 'foo', itemsPerPage: 7, currentPage: p, totalItems: total }">
+            <div class="user-card shadow">
+                <div class="icon w-50 m-auto">
+                <img src="../../../assets/admin2.png" alt="User Profile Picture">
+                </div>
+                <div class="data">
+                    <h2>{{agent.name}}</h2>
+                    <br>
+                    <p><span class="fw-bold">Email: </span>{{agent.email}} </p>
+                    <p><span class="fw-bold">Association Name: </span> {{agent.associationName}}</p>
+                    <br>
+                    <div class="buttons d-flex flex-column">
+                        <button class="btn btn-secondary mb-3"  [routerLink]="['/EditRepresntor',agent.id]">EDIT REPRESNTOR</button>
+                        <button class="btn btn-danger " (click)="deleteAgent(agent.id)">DELETE REPRESNTOR</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <pagination-controls class="pagination-controls text-center" id="foo"
+    (pageChange)="pageChanged($event)"
+    (pageBoundsCorrection)="pageChanged($event)"
+    [maxSize]="9"
+    [directionLinks]="true"
+    [autoHide]="true"
+    [responsive]="true"
+    previousLabel="Previous"
+    nextLabel="Next">
+  </pagination-controls>
+</div>
+
+<section class="notfound-container d-flex justify-content-center align-items-center" *ngIf="notFound!=''">
+	<div class="notfound-content shadow p-4 text-center">
+	  <i class="fas fa-exclamation-circle notfound-icon"></i>
+	  <h2 class="notfound-title"> Not Found Members in this Association </h2>
+	  <!-- <p class="notfound-message">We couldn't find the player you were looking for. Please check the name and try again.</p> -->
+	</div>
+  </section>

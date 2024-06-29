@@ -1,0 +1,46 @@
+<div class="shadow p-3 rounded-2" #top>
+  <h1 class="text-center text-dark p-3">All Players</h1>
+
+  <input type="text" placeholder="Search..." class="form-control w-75 m-auto mb-5" [(ngModel)]="term">
+
+  <div class="row g-4">
+    <div class="col-md-3 align-items-center">
+      <div class="add-user-card bg-transparent">
+        <div class="icon mb-5 mt-5"><i class="fa-solid fa-user-plus text-dark"></i></div>
+        <button class="btn btn-dark" routerLink="/addPlayer">ADD PLAYER</button>
+      </div>
+    </div>
+    <div class="col-3" *ngFor="let player of allPlayers | search:term | paginate: { id: 'foo', itemsPerPage: 11, currentPage: p, totalItems: total }">
+      <div class="profile-card text-center" [routerLink]="['/playerDetails', player.id]">
+        <div class="img w-75 m-auto">
+          <img [src]="player.img" alt="Profile Avatar" class="profile-img img-fluid rounded-circle">
+        </div>
+        <h2 class="playerName">{{player.name}}</h2>
+        <div class="section">
+          <div class="player-data d-flex flex-column-reverse justify-content-between mb-4">
+            <div class="part1">
+              <p><span>Email: </span> <small>{{player.email}}</small></p>
+              <p><span>Association Name: </span> <small>{{player.associationName}}</small></p>
+              <p><span>Club: </span> <small>{{player.club}}</small></p>
+            </div>
+          </div>
+          <div class="buttons row justify-content-around">
+            <button class="btn btn-secondary col-5" [routerLink]="['/editPlayer', player.id]">EDIT PLAYER</button>
+            <button class="btn btn-danger col-5" (click)="deletePlayer(player.id)">DELETE PLAYER</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <pagination-controls class="pagination-controls text-center" id="foo"
+    (pageChange)="pageChanged($event)"
+    (pageBoundsCorrection)="pageChanged($event)"
+    [maxSize]="9"
+    [directionLinks]="true"
+    [autoHide]="true"
+    [responsive]="true"
+    previousLabel="Previous"
+    nextLabel="Next">
+  </pagination-controls>
+</div>

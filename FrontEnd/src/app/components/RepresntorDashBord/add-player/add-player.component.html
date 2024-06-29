@@ -1,0 +1,102 @@
+<div class="container mb-5 w-50">
+  <h1 class="text-center mb-5">Add Player</h1>
+  <form [formGroup]="addPlayer" (ngSubmit)="handelForm()">
+    <div class="row">
+    <div class="form-group col-md-4  mb-3">
+            <label for="inputName"> Full Name *</label>
+            <input type="text" class="form-control" formControlName="name" id="inputName" placeholder="Enter your name">
+            <div class="alert alert-danger mt-1" *ngIf="addPlayer.get('name')?.errors && (addPlayer.get('name')?.touched ||addPlayer.get('name')?.value.length>0) ">
+                <p class="m-0 " *ngIf="addPlayer.get('name')?.getError('required')">name is required</p>
+                <p class="m-0 " *ngIf="addPlayer.get('name')?.getError('pattern')">name is not valid</p>
+            </div>
+    </div>
+    <div class="form-group col-md-4 mb-3">
+      <label for="inputBirthDate">Birth Date *</label>
+      <input type="date" class="form-control" formControlName="birthOfDate" id="inputBirthDate" max="2024-6-9">
+      <div class="alert alert-danger mt-1" *ngIf="addPlayer.get('birthOfDate')?.errors && (addPlayer.get('birthOfDate')?.touched || addPlayer.get('birthOfDate')?.value.length > 0)">
+          <p class="m-0" *ngIf="addPlayer.get('birthOfDate')?.getError('required')">birthOfDate is required</p>
+      </div>
+  </div>
+   
+      <div class="form-group col-md-4 mb-3">
+        <label for="inputGender">Gender *</label>
+        <select id="inputGender" formControlName="gender" class="form-control">
+          <option selected disabled>Choose...</option>
+          <option>male</option>
+          <option>female</option>
+        </select>
+        <div class="alert alert-danger mt-1" *ngIf="addPlayer.get('gender')?.errors && (addPlayer.get('gender')?.touched ||addPlayer.get('gender')?.value.length>0) ">
+            <p class="m-0 " *ngIf="addPlayer.get('gender')?.getError('required')">gender is required</p>
+        </div>
+      </div>
+
+      <div class="form-group col-md-12 mb-3">
+        <label for="inputHeight">Height (cm) *</label>
+        <input type="number" class="form-control" id="inputHeight" formControlName="height" placeholder="Enter your height">
+        <div class="alert alert-danger mt-1" *ngIf="addPlayer.get('height')?.errors && (addPlayer.get('height')?.touched ||addPlayer.get('height')?.value.length>0) ">
+            <p class="m-0 " *ngIf="addPlayer.get('height')?.getError('required')">height is required</p>
+        </div>
+      </div>
+
+      <div class="form-group col-md-12 mb-3">
+        <label for="inputWeight">Weight (kg) *</label>
+        <input type="number" class="form-control" id="inputWeight" formControlName="weight" placeholder="Enter your weight">
+        <div class="alert alert-danger mt-1" *ngIf="addPlayer.get('weight')?.errors && (addPlayer.get('weight')?.touched ||addPlayer.get('weight')?.value.length>0) ">
+            <p class="m-0 " *ngIf="addPlayer.get('weight')?.getError('required')">weight is required</p>
+        </div>
+      </div>
+    
+      <div class="form-group col-md-12 mb-3">
+        <label for="inputClub">Club *</label>
+        <input type="text" class="form-control" formControlName="club" id="inputClub" placeholder="Enter your club"> 
+        <div class="alert alert-danger mt-1" *ngIf="addPlayer.get('club')?.errors && (addPlayer.get('club')?.touched ||addPlayer.get('club')?.value.length>0) ">
+            <p class="m-0 " *ngIf="addPlayer.get('club')?.getError('required')">club is required</p>
+          
+        </div>
+      </div>
+      <div class="form-group col-md-12 mb-3">
+        <label for="inputClub">Email *</label>
+        <input type="text" class="form-control" formControlName="email" id="inputClub" placeholder="Enter your email"> 
+        <div class="alert alert-danger mt-1" *ngIf="addPlayer.get('email')?.errors && (addPlayer.get('email')?.touched ||addPlayer.get('email')?.value.length>0) ">
+            <p class="m-0 " *ngIf="addPlayer.get('email')?.getError('required')">email is required</p>
+            <p class="m-0 " *ngIf="addPlayer.get('email')?.getError('email')">email is not valid</p>
+          
+        </div>
+      </div>
+      <div class="form-group col-md-12 mb-3">
+        <label for="inputClub">Password *</label>
+        <input type="password" class="form-control" formControlName="password" id="inputpassword" placeholder="Enter your password"> 
+        <div class="alert alert-danger mt-1" *ngIf="addPlayer.get('password')?.errors && (addPlayer.get('password')?.touched ||addPlayer.get('password')?.value.length>0) ">
+            <p class="m-0 " *ngIf="addPlayer.get('password')?.getError('required')">password is required</p>
+            <p class="m-0 " *ngIf="addPlayer.get('password')?.getError('pattern')">password is not valid</p>
+          
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-8">
+          <div class="form-group file-upload-wrapper d-flex align-items-center">
+            <div class="imgInput w-75">
+              <label for="imageUpload">Image *</label>
+              <input type="text" id="imageUpload" class="form-control" formControlName="img" readonly>
+            </div>
+            <div class="buttonImg">
+              <label for="fileUpload" class="custom-file-upload btn btn-outline-secondary ms-5">
+                <i class="fa-solid fa-cloud-arrow-up"></i> Uploade Img
+              </label>
+              <input id="fileUpload"  type="file" style="display:none;" (change)="onFileSelected($event) "  onchange="document.getElementById('imageUpload').value = this.files[0].name">
+            </div>
+          </div>
+          <div class="alert alert-danger mt-1" *ngIf="addPlayer.get('img')?.errors && (addPlayer.get('img')?.touched ) ">
+            <p class="m-0 " *ngIf="addPlayer.get('img')?.getError('required')">img is required</p>
+            <p class="m-0 " *ngIf="addPlayer.get('img')?.getError('ImgSize')"> Image size exceeds the limit of 400x600 pixels.</p>
+          </div>
+          
+        </div>
+      </div>
+</div>
+    <button type="submit" class="btn btn-dark w-100" [disabled]="addPlayer.invalid">Add Player <i *ngIf="isLoading" class="fa-solid fa-spinner fa-spin"></i></button>
+    <p class="alert alert-danger p-1 ms-0 mt-2 w-50" *ngIf="errMessage">{{errMessage}}</p>
+
+  </form>
+</div>
+

@@ -1,0 +1,21 @@
+<section>
+    <div class="container p-5">
+        <div class="form-container shadow ">
+            <h1 class="text-center mb-5">Add Association</h1>
+            <form [formGroup]="addAssociation" (ngSubmit)="handelForm()">
+                <div class="form-group">
+                    <label for="AssociationName" class="form-label">Association Name *</label>
+                    <input type="text" class="form-control" formControlName="associationName" id="AssociationName" name="AssociationName">
+                    <div class="alert alert-danger mt-1" *ngIf="addAssociation.get('name')?.errors && (addAssociation.get('name')?.touched ||addAssociation.get('name')?.value.length>0) ">
+                        <p class="m-0 " *ngIf="addAssociation.get('name')?.getError('required')">name is required</p>
+                        <p class="m-0 " *ngIf="addAssociation.get('name')?.getError('pattern')">name is not valid</p>
+                    </div>
+                </div>
+                <div class="button w-100  ">
+                    <button type="submit" class="btn btn-dark" [disabled]="addAssociation.invalid">Add Association <i *ngIf="isLoading" class="fa-solid fa-spinner fa-spin"></i></button>
+                    <p class="alert alert-danger p-1 ms-0 mt-2 w-50" *ngIf="errMessage">{{errMessage}}</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

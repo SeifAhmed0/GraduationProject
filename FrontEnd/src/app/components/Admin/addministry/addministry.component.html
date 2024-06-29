@@ -1,0 +1,38 @@
+<section>
+    <div class="container p-5">
+        <div class="form-container shadow ">
+            <h1 class="text-center mb-5">Create Agent Account</h1>
+            <form [formGroup]="addAgentOfMinisetry" (ngSubmit)="handelForm()">
+                <div class="form-group">
+                    <label for="firstname" class="form-label">Full Name *</label>
+                    <input type="text" class="form-control" formControlName="name" id="firstname" name="firstname" >
+                    <div class="alert alert-danger mt-1" *ngIf="addAgentOfMinisetry.get('name')?.errors && (addAgentOfMinisetry.get('name')?.touched ||addAgentOfMinisetry.get('name')?.value.length>0) ">
+                        <p class="m-0 " *ngIf="addAgentOfMinisetry.get('name')?.getError('required')">name is required</p>
+                        <p class="m-0 " *ngIf="addAgentOfMinisetry.get('name')?.getError('pattern')">name is not valid</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">Email *</label>
+                    <input type="email" class="form-control" formControlName="email" id="email" name="email" >
+                    <div class="alert alert-danger mt-1" *ngIf="addAgentOfMinisetry.get('email')?.errors && (addAgentOfMinisetry.get('email')?.touched ||addAgentOfMinisetry.get('email')?.value.length>0) ">
+                        <p class="m-0 " *ngIf="addAgentOfMinisetry.get('email')?.getError('required')">email is required</p>
+                        <p class="m-0 " *ngIf="addAgentOfMinisetry.get('email')?.getError('email')">email is invalid </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="form-label">Password *</label>
+                    <input type="password" class="form-control" formControlName="password" id="password" name="password" >
+                    <div class="alert alert-danger mt-1" *ngIf="addAgentOfMinisetry.get('password')?.errors && (addAgentOfMinisetry.get('password')?.touched ||addAgentOfMinisetry.get('password')?.value.length>0) ">
+                        <p class="m-0 " *ngIf="addAgentOfMinisetry.get('password')?.getError('required')">password is required</p>
+                        <p class="m-0 " *ngIf="addAgentOfMinisetry.get('password')?.getError('pattern')">password must be at least 6 character </p>
+                    </div>
+                </div>
+                <div class="button w-100  ">
+                    <button type="submit" class="btn btn-dark main-btn " [disabled]="addAgentOfMinisetry.invalid">Creat Account <i *ngIf="isLoading" class="fa-solid fa-spinner fa-spin"></i></button>
+                    <p class="alert alert-danger p-1 ms-0 mt-2 w-50" *ngIf="errMessage">{{errMessage}}</p>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</section>

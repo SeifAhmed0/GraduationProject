@@ -1,0 +1,93 @@
+<div class="container py-3 shadow mb-4">
+    <div class="row g-3">
+        <div class="col-lg-3 img">
+        <img class="w-100 rounded-3 shadow" [src]="playerDetails.img" alt="">
+        </div>
+        <div class="col-lg-9 section-1">
+            <h2 class="playerName"> {{playerDetails.playerName}}</h2>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul>
+                        <li class="w-35 mb-2 d-flex justify-content-start"><span class="span">Gender :</span>  <span class="ms-2">{{playerDetails.playerGender}}</span></li>
+                        <li class="w-35 mb-2 d-flex justify-content-start"><span class="span">Club : </span>  <span class="ms-2">{{playerDetails.club}}</span></li>
+                        <li class="w-35 mb-2 d-flex justify-content-start"><span class="span">Height : </span>  <span class="ms-2">{{playerDetails.height}} cm</span></li>
+                        <li class="w-35 mb-2 d-flex justify-content-start"><span class="span">Age : </span>  <span class="ms-2">{{playerAge}}</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="row g-5 py-5 ">
+        <div class="d-flex align-items-start flex-column">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light w-100 p-0">
+                <div class="container-fluid">
+                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav me-auto" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                      <button class=" leftBtn nav-link active" id="v-pills-Local-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Local" type="button" role="tab" aria-controls="v-pills-Local" aria-selected="true">Local</button>
+                      <button class=" leftBtn nav-link" id="v-pills-International-tab" data-bs-toggle="pill" data-bs-target="#v-pills-International" type="button" role="tab" aria-controls="v-pills-International" aria-selected="false">International</button>
+
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            <div class="tab-content col-lg-9 content mt-3 w-100" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" id="v-pills-Local" role="tabpanel" aria-labelledby="v-pills-Local-tab" tabindex="0">
+                <div class="row">
+                    <div class="col-md-12 container-table">
+                      <table class="table table-striped ">
+                        <thead>
+                          <tr>
+                            <th scope="col">Name Of Championship</th>
+                            <th scope="col">Type Of Medal</th>
+                            <th scope="col">Year Of Championship</th>
+                            <th scope="col">Request To Edit</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let item of laocalArray">
+                            <td>{{item.name}}</td>
+                            <td>{{item.typeOfMedal}} </td>
+                            <td>{{item.year}}</td>
+                            <td><button class="btn btn-info" [routerLink]="['/reqToEditMedal',item.medalID]"> <i class="fa-solid fa-pen-to-square"></i></button></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="tab-pane fade" id="v-pills-International" role="tabpanel" aria-labelledby="v-pills-International-tab" tabindex="0">
+                <div class="row">
+                    <div class="col-md-12 container-table">
+                      <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th scope="col">Name Of Championship</th>
+                            <th scope="col">Type Of Medal</th>
+                            <th scope="col">Year Of Championship</th>
+                            <th scope="col"> Request To Edit</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let item of internationalArray">
+                            <td>{{item.name}}</td>
+                            <td>{{item.typeOfMedal}} </td>
+                            <td>{{item.year}}</td>
+                            <td><button class="btn btn-info"  [routerLink]="['/reqToEditMedal',item.medalID]"> <i class="fa-solid fa-pen-to-square"></i></button></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

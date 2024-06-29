@@ -1,0 +1,31 @@
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-label {
+    font-weight: bold;
+}
+
+section .container{
+    min-height: 85vh;
+}
+
+ form input:focus,form select:focus ,textarea:focus{
+    border: 1px solid #0a0b0c57;
+    box-shadow: 0px 0px 0px 4px #444a5364;
+    border-radius: 5px;
+  }
+  .button button:disabled{
+    cursor: not-allowed!important;
+    border: 0px solid #0000009e !important;
+    background-color:  #0000009e;
+    color: #ffffff78;
+  }
+
+  

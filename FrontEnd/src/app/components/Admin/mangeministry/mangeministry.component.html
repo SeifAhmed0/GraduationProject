@@ -1,0 +1,43 @@
+<div class="container-fluid user-list-page bg-body-tertiary mt-2" #top>
+    <h1 class="text-center text-dark  p-4">Agent Of Ministry List</h1>
+    <input type="text" placeholder="Search..." class="form-control w-75 m-auto  mb-5" [(ngModel)]="term">
+
+    <div class="row g-5">
+        <div class="col-md-3  ">
+            <div class="add-user-card h-100  bg-transparent" routerLink="/addMinistry">
+                <div class="icon mb-5 mt-5"><i class="fa-solid fa-user-plus text-dark"></i></div>
+                <button class="btn btn-dark" routerLink="/addMinistry">ADD AGENT</button>
+            </div>
+        </div>
+        <div class="col-md-3" *ngFor="let agent of allAgents|search:term| paginate: { id: 'foo', itemsPerPage: 7, currentPage: p, totalItems: total}">
+            <div class="user-card shadow">
+                <div class="icon w-50 m-auto">
+                <img src="../../../assets/admin2.png" alt="User Profile Picture">
+                </div>
+                <div class="data">
+                    <h2>{{agent.name}}</h2>
+                    <br>
+                    <p><span class="fw-bold">Email: </span>{{agent.email}} </p>
+                    <p><span class="fw-bold">Type: </span> {{agent.type}}</p>
+                    <br>
+                    <div class="buttons d-flex flex-column">
+                        <button class="btn btn-secondary mb-3"  [routerLink]="['/updataMinistry',agent.id]">EDIT AGENT</button>
+                        <button class="btn btn-danger" (click)="deleteAgent(agent.id)">DELETE AGENT</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <pagination-controls class="pagination-controls text-center" id="foo"
+    (pageChange)="pageChanged($event)"
+    (pageBoundsCorrection)="pageChanged($event)"
+    [maxSize]="9"
+    [directionLinks]="true"
+    [autoHide]="true"
+    [responsive]="true"
+    previousLabel="Previous"
+    nextLabel="Next">
+  </pagination-controls>
+</div>

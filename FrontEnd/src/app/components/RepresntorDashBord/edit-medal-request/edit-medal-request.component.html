@@ -1,0 +1,123 @@
+<div class="container mb-5 w-75">
+    <h1 class="text-center mb-5"> Edit Player Medal</h1>
+  
+    <div class="row mt-5 section">
+  
+      <div class="col-6 part1 ">
+        <form >
+          <div class="row">
+          <div class=" col-md-12  mb-3"  *ngIf="model2.MedalAchievementDate != model.MedalAchievementDate">
+                  <label for="MedalAchievementDate" class="form-label">data of championship *</label>
+                    <input disabled [(ngModel)]="model2.MedalAchievementDate" name="MedalAchievementDate" type="date" class="form-control" id="MedalAchievementDate">
+          </div>
+          <div class=" col-md-12 mb-3" *ngIf="model2.championshipID != model.championshipID">
+            <label for="championshipID" class="form-label">championship  *</label>
+            <select disabled [(ngModel)]="model2.championshipID" (change)="onChampionshipChange()" class="form-control"  id="championshipID" name="championshipID" >
+                <option value="" disabled selected >Select championship</option>
+                <option disabled [value]="item.id" *ngFor="let item of nameArray">
+                    <ng-container *ngIf="!item.age; else elseBlock">
+                        {{"ID : "+item.id +"Name : "+item.name +" Type of championship: "+item.typeOfChampionship + " Gender: "+ item.gender }}
+                      </ng-container>
+                      <ng-template #elseBlock>
+                        {{"ID : "+item.id +"Name : "+item.name +" Type of championship: "+item.typeOfChampionship + " Gender: "+ item.gender +" Under the age of "+item.age}}
+                      </ng-template>
+                    </option>                    
+            </select>
+            
+    
+          </div>
+          <div class=" col-md-12 mb-3" *ngIf="model2.year != model.year">
+
+            <label for="year" class="form-label">year *</label>
+                    <input [(ngModel)]="model2.year" type="number" name="year" min="1900" max="2100" class="form-control" disabled id="year">
+    
+            </div>
+            <div class=" col-md-12 mb-3" *ngIf="model2.typeOfMedal !='didnotWin'">
+                <label for="isWin" class="form-label">Is Win *</label>
+                <input [(ngModel)]="model2.isWin" name="isWin" type="checkbox"  disabled id="isWin">
+            </div>
+            <div *ngIf="model2.typeOfMedal !='didnotWin'">
+                <div class=" col-md-12 mb-3" *ngIf="model2.typeOfMedal != model.typeOfMedal">
+                    <label for="typeOfMedal" class="form-label">type Of Medal *</label>
+                    <select  name="typeOfMedal" [(ngModel)]="model2.typeOfMedal" class="form-control" id="typeOfMedal" >
+                        <option value="" disabled selected >Select type of medal</option>
+                        <option value="gold">gold</option>
+                        <option value="Silver">Silver</option>
+                        <option value="bronze">bronze</option>
+                    </select>
+                </div>
+            </div>
+
+      </div>
+        </form>
+      </div>
+
+
+
+      <div class="col-6  part2">
+        <form >
+          <div class="row">
+            <div class=" col-md-12  mb-3"  *ngIf="model2.MedalAchievementDate != model.MedalAchievementDate">
+                <label for="MedalAchievementDate" class="form-label">data of championship *</label>
+                  <input disabled [(ngModel)]="model.MedalAchievementDate" name="MedalAchievementDate" type="date" class="form-control" id="MedalAchievementDate">
+        </div>
+        <div class=" col-md-12 mb-3" *ngIf="model2.championshipID != model.championshipID">
+          <label for="championshipID" class="form-label">championship  *</label>
+          <select disabled [(ngModel)]="model.championshipID" (change)="onChampionshipChange()" class="form-control"  id="championshipID" name="championshipID" >
+              <option value="" disabled selected >Select championship</option>
+              <option disabled [value]="item.id" *ngFor="let item of nameArray">
+                  <ng-container *ngIf="!item.age; else elseBlock">
+                      {{"ID : "+item.id +"Name : "+item.name +" Type of championship: "+item.typeOfChampionship + " Gender: "+ item.gender }}
+                    </ng-container>
+                    <ng-template #elseBlock>
+                      {{"ID : "+item.id +"Name : "+item.name +" Type of championship: "+item.typeOfChampionship + " Gender: "+ item.gender +" Under the age of "+item.age}}
+                    </ng-template>
+                  </option>                    
+          </select>
+          
+  
+        </div>
+        <div class=" col-md-12 mb-3" *ngIf="model2.year != model.year">
+
+          <label for="year" class="form-label">year *</label>
+                  <input [(ngModel)]="model.year" name="year" type="number" min="1900" max="2100" class="form-control" disabled id="year">
+  
+          </div>
+
+          <div class=" col-md-12 mb-3"  *ngIf="model.typeOfMedal !='didnotWin'">
+              <label for="isWin" class="form-label">Is Win *</label>
+              <input name="isWin" [(ngModel)]="model.isWin" type="checkbox"  disabled id="isWin">
+          </div>
+          <div *ngIf="model.typeOfMedal">
+              <div class=" col-md-12 mb-3" *ngIf="model.typeOfMedal !='didnotWin'">
+                  <label for="typeOfMedal" class="form-label">type Of Medal *</label>
+                  <select disabled [(ngModel)]="model.typeOfMedal" class="form-control" id="typeOfMedal" name="typeOfMedal" >
+                      <option value="" disabled selected >Select type of medal</option>
+                      <option value="gold">gold</option>
+                      <option value="Silver">Silver</option>
+                      <option value="bronze">bronze</option>
+                  </select>
+              </div>
+          </div>
+          </div>
+          <div class="col-md-12 mb-3">
+            <label for="description" class="form-label">Description *</label>
+            <textarea disabled class="form-control" [(ngModel)]="model.description" name="description" id="Description" name="description" rows="2" placeholder="Enter your comments here..."></textarea>
+          </div>
+
+          <div class="buttons d-flex justify-content-around">
+            <button  type="submit" class="btn btn-outline-success " (click)="acceptReq()" *ngIf="errMessage==''">Accept <i *ngIf="isLoading" class="fa-solid fa-spinner fa-spin"></i></button>
+            <button type="submit" class="btn btn-outline-danger " (click)="rejectReq()">Reject<i *ngIf="isLoading" class="fa-solid fa-spinner fa-spin"></i></button>
+          </div>
+          <div class=" d-flex justify-content-center mt-3">
+            <p class="alert alert-danger p-1 ms-0 mt-2 w-75 text-center" *ngIf="errMessage">{{errMessage}} To Another Player to edit it <a [routerLink]="['/editmedal', model.playerId,model.id]" class="text-dark">click here</a></p>
+    
+          </div>
+                </form>
+      </div>
+    </div>
+  
+    </div>
+    
+    
+  

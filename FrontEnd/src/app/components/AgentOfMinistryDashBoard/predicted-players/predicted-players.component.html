@@ -1,0 +1,110 @@
+<div class="container mt-5 mb-3">
+  <h1>Predicted Players</h1>
+  <div class="table-wrapper"> <!-- Added wrapper div -->
+    <ul class="responsive-table">
+      <li class="table-header">
+        <div class="col col-1 d-flex justify-content-center align-items-center">Ranking</div>
+        <div class="col col-1 d-flex justify-content-center align-items-center">Player Img</div>
+        <div class="col col-3 d-flex justify-content-center align-items-center">Player Name</div>
+        <div class="col col-1 d-flex justify-content-center align-items-center">Age</div>
+        <div class="col col-1 d-flex justify-content-center align-items-center">Gender</div>
+        <div class="col col-2 d-flex justify-content-center align-items-center">Club</div>
+      </li>
+      <li class="table-row" *ngFor="let player of players; index as i">
+        <div class="col col-1 d-flex justify-content-center align-items-center" data-label="Job Id">
+          <div class="d-flex justify-content-center align-items-center">
+            <span class="fs-2">{{i + 1}}</span>
+            <i *ngIf="i === 0" class="cup fa-solid fa-trophy"></i>
+          </div>
+        </div>
+        <div class="col col-1" data-label="Customer Name">
+          <div class="w-50">
+            <img class="w-100" [src]="player.img" alt="">
+          </div>
+        </div>
+        <div class="col col-3 d-flex justify-content-center align-items-center" data-label="Amount">{{player.name}}</div>
+        <div class="col col-1 d-flex justify-content-center align-items-center" data-label="Payment Status">{{player.birthOfDate}}</div>
+        <div class="col col-1 d-flex justify-content-center align-items-center" data-label="Payment Status">{{player.gender}}</div>
+        <div class="col col-2 d-flex justify-content-center align-items-center" data-label="Payment Status">{{player.club}}</div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<section class="">
+  <div class="row charts container mb-5">
+    <div class="d-flex justify-content-center">
+      <h2 class=" p-3 mb-4 shadow text-center head w-25">Last Five Years </h2>
+
+    </div>
+    <div class="col-4 ">
+      <h6 class=" text-center ">Number Of Gold Medals For Each Player</h6>
+      <div class="chart shadow border p-3">
+          <canvas id="pieChart" width="130" height="100" ></canvas>
+          <p class="text-success number2 m-3 ">  </p>
+
+        </div>
+  </div>
+    <div class="col-4 ">
+      <h6 class=" text-center ">Number Of Bronze Medals For Each Player</h6>
+      <div class="chart shadow border p-3">
+          <canvas id="pieChart-2" width="130" height="100" ></canvas>
+          <p class="text-success number2 m-3 ">  </p>
+
+        </div>
+  </div>
+    <div class="col-4 ">
+      <h6 class=" text-center ">Number Of Silver Medals For Each Player</h6>
+      <div class="chart shadow border p-3">
+          <canvas id="pieChart-3" width="130" height="100" ></canvas>
+          <p class="text-success number2 m-3 ">  </p>
+
+        </div>
+  </div>
+  <div class="col-7 mt-4">
+    <h6 class=" text-center "> Number Of wined Championships For Each Player </h6>
+    <div class="chart  shadow border">
+        <canvas id="barChart" width="240" height="120" ></canvas>
+    </div>
+</div>
+  </div>
+
+
+
+  <div class="row charts container mb-5">
+    <div class="d-flex justify-content-center">
+      <h2 class=" p-3 mb-4 shadow text-center head w-25">All Years </h2>
+
+    </div>
+    <div class="col-4 ">
+      <h6 class=" text-center ">Number Of All Gold Medals For Each Player</h6>
+      <div class="chart shadow border p-3">
+          <canvas id="pieChartAll" width="130" height="100" ></canvas>
+          <p class="text-success number2 m-3 ">  </p>
+
+        </div>
+  </div>
+    <div class="col-4 ">
+      <h6 class=" text-center ">Number Of All Bronze Medals For Each Player</h6>
+      <div class="chart shadow border p-3">
+          <canvas id="pieChart-2All" width="130" height="100" ></canvas>
+          <p class="text-success number2 m-3 ">  </p>
+
+        </div>
+  </div>
+    <div class="col-4 ">
+      <h6 class=" text-center ">Number Of All Silver Medals For Each Player</h6>
+      <div class="chart shadow border p-3">
+          <canvas id="pieChart-3All" width="130" height="100" ></canvas>
+          <p class="text-success number2 m-3 ">  </p>
+
+        </div>
+  </div>
+  <div class="col-7 mt-4">
+    <h6 class=" text-center "> Number Of All wined Championships For Each Player </h6>
+    <div class="chart  shadow border">
+        <canvas id="barChartAll" width="240" height="120" ></canvas>
+    </div>
+</div>
+  </div>
+</section>

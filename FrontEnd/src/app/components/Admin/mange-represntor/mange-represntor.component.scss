@@ -1,0 +1,118 @@
+body{
+  text-decoration: none!important;
+}
+
+.user-list-page {
+  color: #fff; 
+  border-radius: 10px;
+  overflow: hidden;
+  
+
+
+}
+
+.add-user-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #0e0d0d;
+  border-radius: 10px;
+  animation: bounceIn 0.8s ease-out; 
+}
+
+@keyframes bounceIn {
+  from {
+      transform: translateY(-50px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+.add-user-card button {
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.icon i {
+  font-size: 70px;
+}
+
+.user-card {
+  border-radius: 10px;
+  padding: 20px;
+  color: #0e0d0d;
+  margin-bottom: 20px;
+  animation: fadeInFromBottom 0.8s ease-out; 
+  img {
+      width: 100%; 
+  }
+}
+
+@keyframes fadeInFromBottom {
+  from {
+      transform: translateY(20px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.data::before {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 11%;
+  width: 233px;
+  height: 1px;
+  background-color: #0e0d0d19;
+}
+
+.add-user-card {
+  cursor: pointer;
+  height: 95%;
+}
+.select{
+  width: 60%;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+select:focus {
+  border: 1px solid #0a0b0c57;
+  box-shadow: 0px 0px 0px 4px #444a5364;
+  border-radius: 5px;
+}
+
+::ng-deep .ngx-pagination{
+  margin-top: 30px;
+  color: #000;
+  text-decoration: none!important;
+
+  }
+  ::ng-deep .ngx-pagination .current {
+    padding: .1875rem .625rem!important;
+    background: #000!important;
+    color: #fefefe!important;
+    cursor: default!important;
+    border-radius: 30px!important;
+  text-decoration: none!important;
+
+}
+::ng-deep .ngx-pagination a:hover{
+  border-radius: 30px!important;
+  text-decoration: none!important;
+
+}

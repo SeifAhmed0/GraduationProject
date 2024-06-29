@@ -1,0 +1,87 @@
+<div class="container mb-5 w-50">
+    <h1 class="text-center mb-5">Edit Player</h1>
+    <form [formGroup]="editPlayer" (ngSubmit)="handelForm()">
+      <div class="row">
+      <div class="form-group col-md-4  mb-3">
+              <label for="inputName">Name *</label>
+              <input type="text" [(ngModel)]="model.name" class="form-control" formControlName="name" id="inputName" placeholder="Enter your name">
+              <div class="alert alert-danger mt-1" *ngIf="editPlayer.get('name')?.errors && (editPlayer.get('name')?.touched ||editPlayer.get('name')?.value.length>0) ">
+                  <p class="m-0 " *ngIf="editPlayer.get('name')?.getError('required')">name is required</p>
+                  <p class="m-0 " *ngIf="editPlayer.get('name')?.getError('pattern')">name is not valid</p>
+              </div>
+      </div>
+      <div class="form-group col-md-4 mb-3">
+              <label for="inputBirthDate">Birth Date *</label>
+              <input type="date" [(ngModel)]="model.birthOfDate" class="form-control" formControlName="birthOfDate" id="inputBirthDate">
+              <div class="alert alert-danger mt-1" *ngIf="editPlayer.get('birthOfDate')?.errors && (editPlayer.get('birthOfDate')?.touched ||editPlayer.get('birthOfDate')?.value.length>0) ">
+                  <p class="m-0 " *ngIf="editPlayer.get('birthOfDate')?.getError('required')">birthOfDate is required</p>
+              </div>
+      </div>
+     
+        <div class="form-group col-md-4 mb-3">
+          <label for="inputGender">Gender *</label>
+          <select id="inputGender" formControlName="gender" [(ngModel)]="model.gender" class="form-control">
+            <option selected disabled>Choose...</option>
+            <option>male</option>
+            <option>female</option>
+          </select>
+          <div class="alert alert-danger mt-1" *ngIf="editPlayer.get('gender')?.errors && (editPlayer.get('gender')?.touched ||editPlayer.get('gender')?.value.length>0) ">
+              <p class="m-0 " *ngIf="editPlayer.get('gender')?.getError('required')">gender is required</p>
+          </div>
+        </div>
+  
+        <div class="form-group col-md-12 mb-3">
+          <label for="inputHeight">Height (cm) *</label>
+          <input type="number" [(ngModel)]="model.height" class="form-control" id="inputHeight" formControlName="height" placeholder="Enter your height">
+          <div class="alert alert-danger mt-1" *ngIf="editPlayer.get('height')?.errors && (editPlayer.get('height')?.touched ||editPlayer.get('height')?.value.length>0) ">
+              <p class="m-0 " *ngIf="editPlayer.get('height')?.getError('required')">height is required</p>
+          </div>
+        </div>
+  
+        <div class="form-group col-md-12 mb-3">
+          <label for="inputWeight">Weight (kg) *</label>
+          <input type="number" [(ngModel)]="model.weight" class="form-control" id="inputWeight" formControlName="weight" placeholder="Enter your weight">
+          <div class="alert alert-danger mt-1" *ngIf="editPlayer.get('weight')?.errors && (editPlayer.get('weight')?.touched ||editPlayer.get('weight')?.value.length>0) ">
+              <p class="m-0 " *ngIf="editPlayer.get('weight')?.getError('required')">weight is required</p>
+          </div>
+        </div>
+      
+        <div class="form-group col-md-12 mb-3">
+          <label for="inputClub">Club *</label>
+          <input type="text" [(ngModel)]="model.club" class="form-control" formControlName="club" id="inputClub" placeholder="Enter your club"> 
+          <div class="alert alert-danger mt-1" *ngIf="editPlayer.get('club')?.errors && (editPlayer.get('club')?.touched ||editPlayer.get('club')?.value.length>0) ">
+              <p class="m-0 " *ngIf="editPlayer.get('club')?.getError('required')">club is required</p>
+            
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-8">
+            <div class="form-group file-upload-wrapper d-flex align-items-center">
+              <div class="imgInput w-75">
+                <label for="imageUpload">Image *</label>
+                <input type="text" id="imageUpload" class="form-control" [(ngModel)]="model.img"  formControlName="img" readonly>
+              </div>
+              <div class="buttonImg">
+                <label for="fileUpload" class="custom-file-upload btn btn-outline-secondary ms-5">
+                  <i class="fa-solid fa-cloud-arrow-up"></i> Uploade Img
+                </label>
+                <input id="fileUpload"  type="file" style="display:none;" (change)="onFileSelected($event) "  onchange="document.getElementById('imageUpload').value = this.files[0].name">
+              </div>
+            </div>
+            <div class="alert alert-danger mt-1" *ngIf="editPlayer.get('img')?.errors && (editPlayer.get('img')?.touched ) ">
+              <p class="m-0 " *ngIf="editPlayer.get('img')?.getError('required')">img is required</p>
+              <p class="m-0 " *ngIf="editPlayer.get('img')?.getError('ImgSize')"> Image size exceeds the limit of 400x600 pixels.</p>
+            </div>
+            <div class="img w-25 mt-2">
+                <img [src]="model.img" alt="" class="w-100">
+            </div>
+          </div>
+        </div>
+  </div>
+      <button type="submit" class="btn btn-dark w-100" [disabled]="editPlayer.invalid">Update Player <i *ngIf="isLoading" class="fa-solid fa-spinner fa-spin"></i></button>
+      <p class="alert alert-danger p-1 ms-0 mt-2 w-50" *ngIf="errMessage">{{errMessage}}</p>
+
+    </form>
+  </div>
+  
+  

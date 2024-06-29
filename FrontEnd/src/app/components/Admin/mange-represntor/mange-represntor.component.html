@@ -1,0 +1,47 @@
+<div class="container-fluid user-list-page mt-2" #top>
+    <h1 class="text-center text-dark  p-4">Represntors List</h1>
+    <select class="form-control select" id="filter" name="filter" [(ngModel)]="term">
+        <option value="" disabled selected>Select Association Name</option>
+        <option *ngFor="let item of AssosiationArray" [value]="item">{{ item }}</option>
+    </select>
+    
+
+    <div class="row g-5">
+        <div class="col-md-3">
+            <div class="add-user-card  bg-transparent ">
+                <div class="icon mb-5 mt-5"><i class="fa-solid fa-user-plus text-dark"></i></div>
+                <button class="btn btn-dark" routerLink="/AddRepresntor">ADD REPRESNTOR</button>
+            </div>
+        </div>
+        <div class="col-md-3 " *ngFor="let agent of allAgents|repfilter:term| paginate: { id: 'foo', itemsPerPage: 7, currentPage: p, totalItems: total }">
+            <div class="user-card shadow">
+                <div class="icon w-50 m-auto">
+                <img src="../../../assets/admin2.png" alt="User Profile Picture">
+                </div>
+                <div class="data">
+                    <h2>{{agent.name}}</h2>
+                    <br>
+                    <p><span class="fw-bold">Email: </span>{{agent.email}} </p>
+                    <p><span class="fw-bold">Association Name: </span> {{agent.associationName}}</p>
+                    <br>
+                    <div class="buttons d-flex flex-column">
+                        <button class="btn btn-secondary mb-3"  [routerLink]="['/EditRepresntor',agent.id]">EDIT REPRESNTOR</button>
+                        <button class="btn btn-danger " (click)="deleteAgent(agent.id)">DELETE REPRESNTOR</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <pagination-controls class="pagination-controls text-center" id="foo"
+    (pageChange)="pageChanged($event)"
+    (pageBoundsCorrection)="pageChanged($event)"
+    [maxSize]="9"
+    [directionLinks]="true"
+    [autoHide]="true"
+    [responsive]="true"
+    previousLabel="Previous"
+    nextLabel="Next">
+  </pagination-controls>
+</div>

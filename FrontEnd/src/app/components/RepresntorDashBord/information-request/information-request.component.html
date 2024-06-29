@@ -1,0 +1,79 @@
+<div class="container mb-5 w-75">
+  <h1 class="text-center mb-5"> Edit Player Information</h1>
+
+  <div class="row mt-5 section">
+
+    <div class="col-6 part1 ">
+      <form >
+        <div class="row">
+        <div class=" col-md-6  mb-3" *ngIf="model2.name != model.playerName">
+                <label for="inputName">Name *</label>
+                <input disabled type="text" [(ngModel)]="model2.name" name="name" class="form-control" id="inputName" placeholder="Enter your name">
+        </div>
+        <div class=" col-md-6 mb-3" *ngIf="model2.birthOfDate != model.birthOfDate">
+                <label for="inputBirthDate">Birth Date *</label>
+                <input disabled type="date" [(ngModel)]="model2.birthOfDate" name="birthOfDate" class="form-control"  id="inputBirthDate">
+  
+        </div>
+        <div class=" col-md-12 mb-3" *ngIf="model2.height != model.height">
+            <label for="inputHeight">Height (cm) *</label>
+            <input disabled type="number" [(ngModel)]="model2.height" name="height" class="form-control" id="inputHeight" placeholder="Enter your height">
+  
+          </div>
+    
+          <div class=" col-md-12 mb-3" *ngIf="model2.weight != model.weight">
+            <label for="inputWeight">Weight (kg) *</label>
+            <input disabled type="number" [(ngModel)]="model2.weight" name="weight" class="form-control" id="inputWeight" placeholder="Enter your weight">
+  
+          </div>
+        
+          <div class=" col-md-12 mb-3" *ngIf="model2.club != model.club">
+            <label for="inputClub">Club *</label>
+            <input disabled type="text" [(ngModel)]="model2.club" name="club" class="form-control"  placeholder="Enter your club"> 
+          </div>
+    </div>
+        <!-- <button  type="submit" class="btn btn-dark w-100" >Request To Edit <i *ngIf="isLoading" class="fa-solid fa-spinner fa-spin"></i></button> -->
+        <!-- <p class="alert alert-danger p-1 ms-0 mt-2 w-50" *ngIf="errMessage">{{errMessage}}</p> -->
+      </form>
+    </div>
+    <div class="col-6  part2">
+      <form >
+        <div class="row">
+          <div class="col-md-6 mb-3 " *ngIf="model2.name != model.playerName">
+            <label for="inputName">Name *</label>
+            <input disabled type="text" [(ngModel)]="model.playerName" name="playerName" class="form-control " id="inputName" placeholder="Enter your name">
+          </div>
+          <div class="col-md-6 mb-3" *ngIf="model2.birthOfDate != model.birthOfDate">
+            <label for="inputBirthDate">Birth Date *</label>
+            <input disabled="" type="date" [(ngModel)]="model.birthOfDate" name="birthOfDate" class="form-control" id="inputBirthDate">
+          </div>
+          <div class="col-md-12 mb-3" *ngIf="model2.height != model.height">
+            <label for="inputHeight">Height (cm) *</label>
+            <input disabled type="number" [(ngModel)]="model.height" name="height" class="form-control" id="inputHeight" placeholder="Enter your height">
+          </div>
+          <div class="col-md-12 mb-3" *ngIf="model2.weight != model.weight">
+            <label for="inputWeight">Weight (kg) *</label>
+            <input disabled type="number" [(ngModel)]="model.weight" name="weight" class="form-control" id="inputWeight" placeholder="Enter your weight">
+          </div>
+          <div class="col-md-12 mb-3" *ngIf="model2.club != model.club">
+            <label for="inputClub">Club *</label>
+            <input disabled type="text" [(ngModel)]="model.club" name="club" class="form-control" placeholder="Enter your club">
+          </div>
+
+        </div>
+        <div class="col-md-12 mb-3">
+          <label for="description" class="form-label">Description *</label>
+          <textarea disabled class="form-control" [(ngModel)]="model.description"  id="Description" name="description" rows="2" placeholder="Enter your comments here..."></textarea>
+        </div>
+        <div class="buttons d-flex justify-content-around">
+          <button type="submit" class="btn btn-outline-success " (click)="acceptReq()">Accept <i *ngIf="isLoading" class="fa-solid fa-spinner fa-spin"></i></button>
+          <button type="submit" class="btn btn-outline-danger " (click)="rejectReq()">Reject<i *ngIf="isLoading" class="fa-solid fa-spinner fa-spin"></i></button>
+        </div>
+        <p class="alert alert-danger p-1 ms-0 mt-2 w-50" *ngIf="errMessage">{{errMessage}}</p>
+      </form>
+    </div>
+  </div>
+
+  </div>
+  
+  

@@ -1,0 +1,64 @@
+<section>
+    <div class="container p-5">
+        <div class="form-container shadow ">
+            <h1 class="text-center mb-5">Add Championship</h1>
+            <form [formGroup]="addChampion" (ngSubmit)="handelForm()">
+                <div class="form-group">
+                    <label for="firstname" class="form-label">Name of champion *</label>
+                    <input type="text" class="form-control" formControlName="name" id="firstname" name="firstname">
+                    <div class="alert alert-danger mt-1" *ngIf="addChampion.get('name')?.errors && (addChampion.get('name')?.touched ||addChampion.get('name')?.value.length>0) ">
+                        <p class="m-0 " *ngIf="addChampion.get('name')?.getError('required')">name is required</p>
+                        <p class="m-0 " *ngIf="addChampion.get('name')?.getError('pattern')">name is not valid</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="weight" class="form-label">weight *</label>
+                    <input type="text" class="form-control" formControlName="weight" id="weight" name="weight">
+                </div>
+                <div class="form-group">
+                    <label for="typeOfChampionship" class="form-label">type Of Championship *</label>
+                    <select class="form-control" formControlName="typeOfChampionship" id="typeOfChampionship" name="typeOfChampionship" >
+                        <option value="" disabled selected >Select type of championship</option>
+                        <option value="International">International</option>
+                        <option value="Continental">Continental</option>
+                        <option value="Local">Local</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                    
+                    <div class="alert alert-danger mt-1" *ngIf="addChampion.get('typeOfChampionship')?.errors && (addChampion.get('typeOfChampionship')?.touched ||addChampion.get('typeOfChampionship')?.value.length>0) ">
+                        <p class="m-0 " *ngIf="addChampion.get('typeOfChampionship')?.getError('required')">type of championship is required</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="gender" class="form-label">gender *</label>
+                    <select class="form-control" formControlName="gender" id="gender" name="gender" >
+                        <option value="" disabled selected >Select gender</option>
+                        <option value="male">male</option>
+                        <option value="female">female</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                    
+                    <div class="alert alert-danger mt-1" *ngIf="addChampion.get('gender')?.errors && (addChampion.get('gender')?.touched ||addChampion.get('gender')?.value.length>0) ">
+                        <p class="m-0 " *ngIf="addChampion.get('gender')?.getError('required')">Association is required</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="isYoungs" class="form-label">Is Young *</label>
+                    <input type="checkbox"  formControlName="isYoungs" id="isYoungs">
+                </div>
+                <div class="form-group" *ngIf="addChampion.get('isYoungs')?.value">
+                    <label for="age" class="form-label">Age *</label>
+                    <input type="number" class="form-control" formControlName="age" id="age">
+                    <div class="alert alert-danger mt-1" *ngIf="addChampion.get('age')?.errors && (addChampion.get('age')?.touched || addChampion.get('age')?.value)">
+                        <p class="m-0 " *ngIf="addChampion.get('age')?.getError('required')">Age is required</p>
+                    </div>
+                </div>
+                <div class="button w-100  ">
+                    <button type="submit" class="btn btn-dark" [disabled]="addChampion.invalid">Add champion <i *ngIf="isLoading" class="fa-solid fa-spinner fa-spin"></i></button>
+                    <p class="alert alert-danger p-1 ms-0 mt-2 w-50" *ngIf="errMessage">{{errMessage}}</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
